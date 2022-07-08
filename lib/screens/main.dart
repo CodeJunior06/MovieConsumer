@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movie_consumer/routes/app_route.dart';
+import 'package:movie_consumer/routes/route.dart';
 
 class Main extends StatelessWidget {
   const Main({Key? key}) : super(key: key);
@@ -8,9 +10,8 @@ class Main extends StatelessWidget {
     return MaterialApp(
         title: "Movie Consumer",
         debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: AppBar(title: const Text("Movie Consumer")),
-          body: const Center(child: Text("First Commit")),
-        ));
+        initialRoute: Routes.MAIN_MENU,
+        routes: getRoutes(),
+      );
   }
 }
