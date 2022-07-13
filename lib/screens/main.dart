@@ -8,10 +8,12 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "Movie Consumer",
-        debugShowCheckedModeBanner: false,
-        initialRoute: Routes.MAIN_MENU,
-        routes: getRoutes(),
-      );
+      title: "Movie Consumer",
+      debugShowCheckedModeBanner: false,
+      initialRoute: Routes.MAIN_MENU,
+      routes: getRoutes(),
+      theme: ThemeData.light()
+          .copyWith(appBarTheme: const AppBarTheme(color: Colors.black)),
+    );
   }
 }
