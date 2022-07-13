@@ -1,8 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:movie_consumer/routes/app_route.dart';
+
 
 class CardSwaper extends StatelessWidget {
   const CardSwaper({Key? key}) : super(key: key);
@@ -20,9 +19,14 @@ class CardSwaper extends StatelessWidget {
         itemHeight: size.height * 0.4,
         itemWidth: size.width * 0.5,
         itemBuilder: (_, int index) {
-          return const FadeInImage(
-              placeholder: NetworkImage("https://via.placeholder.com/300/400"),
-              image: NetworkImage("https://via.placeholder.com/300/400"));
+          return GestureDetector( 
+            onTap: () => Navigator.pushNamed(context, Routes.INFORMATION),
+            child:  ClipRRect( 
+            borderRadius:  BorderRadius.circular(20),
+            child:  const FadeInImage(
+              placeholder: NetworkImage("https://via.placeholder.com/300x400"),
+              image: NetworkImage("https://via.placeholder.com/300x400"),
+              fit: BoxFit.cover)));
         },
       ),
     );
